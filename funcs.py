@@ -1,6 +1,4 @@
+import requests
 
-def validatePokemon(pokemon):
-    if pokemon == "hola" or pokemon == "pene":
-        return True
-    else:
-        return False
+def getPokemon(pokemon):
+    return requests.get("http://pokeapi.co/api/v2/pokemon/"+pokemon)
