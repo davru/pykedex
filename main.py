@@ -18,19 +18,45 @@ while True:
  
     data = response.json()
 
+
+    #############################################################
+    ########################### IMAGE ###########################
+    #############################################################
     imgr = requests.get(data["sprites"]["front_default"])
     img = Image.open(BytesIO(imgr.content))
-    img.show()
+    w, h = img.size
+    img.resize((w*2, h*2)).show()
 
+
+    #############################################################
+    ######################### BASE INFO #########################
+    #############################################################
     print( "\n" + pycol.BOLD + pycol.UNDERLINE + data["name"].capitalize() + pycol.ENDC + " (pokeapi ID: " + str(data["id"]) + ")" + "\n" +
-           "Weight: " + str(data["weight"]) + "\n" +
-           "Height: " + str(data["height"]) + "\n" +
+           "Weight: " + str(data["weight"]/10) + "kg\n" +
+           "Height: " + str(data["height"]/10) + "m\n" +
            "Base experience: " + str(data["base_experience"]) )
-    types = []
+    ########################### TYPES ###########################
+    types, abilities = [], []
     for t in data["types"]:
         types.append(t["type"]["name"])
-    print( "Types: " + ', '.join(types) + "\n")
+    print( "Types: " + ', '.join(types) )
+    ######################### ABILITIES #########################
+    for a in data["abilities"]:
+        ab = a["ability"]["name"]
+        if a["is_hidden"]:
+            ab = ab + " (hidden ab.)"
+        abilities.append(ab)
+    print( "Abilities: " )
+    for ab in abilities:
+        print( " - " + ab.capitalize() )
+    ########################### STATS ###########################
+    #############################################################
 
+
+
+    #############################################################
+    ######################## END OF LOOP ########################
+    #############################################################
     print( "Do you wanna ask for another pokemon? (Y/n) ", end="" )
     answer = input()
     if answer == 'n':
