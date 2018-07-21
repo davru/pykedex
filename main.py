@@ -22,16 +22,18 @@ while True:
     #############################################################
     ########################### IMAGE ###########################
     #############################################################
-    imgr = requests.get(data["sprites"]["front_default"])
+    #imgburl = "https://assets.pokemon.com/assets/cms2/img/pokedex/full/" + str(data["id"]) + ".png"
+    imgburl = "https://img.pokemondb.net/artwork/" + str(data["name"]) + ".jpg"
+    imgr = requests.get(imgburl)
     img = Image.open(BytesIO(imgr.content))
     w, h = img.size
-    img.resize((w*2, h*2)).show()
+    img.resize((w, h)).show()
 
 
     #############################################################
     ######################### BASE INFO #########################
     #############################################################
-    print( "\n" + pycol.BOLD + pycol.UNDERLINE + data["name"].capitalize() + pycol.ENDC + " (pokeapi ID: " + str(data["id"]) + ")" + "\n" +
+    print( "\n" + pycol.BOLD + pycol.UNDERLINE + data["name"].capitalize() + pycol.ENDC + " (ID: " + str(data["id"]) + ")" + "\n" +
            "Weight: " + str(data["weight"]/10) + "kg\n" +
            "Height: " + str(data["height"]/10) + "m\n" +
            "Base experience: " + str(data["base_experience"]) )
@@ -50,6 +52,9 @@ while True:
     for ab in abilities:
         print( " - " + ab.capitalize() )
     ########################### STATS ###########################
+    print( "Stats: " )
+    for s in data["stats"]:
+        print(getStrBar((s["stat"]["name"] + ":").ljust(17), s["base_stat"]))
     #############################################################
 
 
