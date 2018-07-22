@@ -3,6 +3,18 @@ import requests, math
 def getPokemon(pokemon):
     return requests.get("http://pokeapi.co/api/v2/pokemon/"+pokemon)
 
+def getEvolChain(id):
+    url = "http://pokeapi.co/api/v2/pokemon-species/" + str(id)
+    resp = requests.get(url)
+    data = resp.json()
+    evol = requests.get(data["evolution_chain"]["url"]).json()["chain"]
+    evols = evol["species"]["name"].capitalize()
+    while evol["evolves_to"]:
+        evol = evol["evolves_to"][0]
+        evols = evols + " -> " + evol["species"]["name"].capitalize()
+    return evols
+
+
 def getStrBar(stat, base):
     # ▓▓▓▓▓▓▓▓░░░░░░░ 
     num = math.ceil(base/20)

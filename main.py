@@ -55,6 +55,9 @@ while True:
     print( "Stats: " )
     for s in data["stats"]:
         print(getStrBar((s["stat"]["name"] + ":").ljust(17), s["base_stat"]))
+    ######################## EVOL CHAIN #########################
+    print("Evolutions:\n" + " " + getEvolChain(data["id"]))
+    print()
     #############################################################
 
 
