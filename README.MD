@@ -2,7 +2,7 @@
 
 [![python versions](https://img.shields.io/pypi/pyversions/pokepy.svg "supported python versions")](https://pypi.org/project/pokepy)
 
-A python simple command line program working as a pokedex, using [PokéAPI](https://pokeapi.co).
+A python simple command line program working as a pokedex, using [PokéAPI](https://pokeapi.co) and [Pokémon Database](https://pokemondb.net) for images and sprites.
 
 Maintainer: [DSGDSR](https://github.com/DSGDSR)
 
