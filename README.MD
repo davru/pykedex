@@ -2,7 +2,7 @@
 
 [![Issues](https://img.shields.io/github/issues/DSGDSR/pykedex.svg)](https://github.com/DSGDSR/pykedex/issues)
 [![Stars](https://img.shields.io/github/stars/DSGDSR/pykedex.svg)](https://github.com/DSGDSR/pykedex/)
-[![Tweet](https://img.shields.io/twitter/url/https/github.com/DSGDSR/pykedex.svg?style=social)](https://twitter.com/home?status=Look%20what%20I%20just%20found%3A%20%F0%9F%94%B4%20pykedex%20for%20Python,%20pokedex%20with%20comands%20at%20https%3A//github.com/DSGDSR/pykedex)
+[![Tweet](https://img.shields.io/twitter/url/https/github.com/DSGDSR/pykedex.svg?style=social)](https://twitter.com/intent/tweet?text=Look%20what%20I%20just%20found%3A%20%F0%9F%94%B4%20pykedex%20for%20Python,%20pokedex%20with%20comands%20at%20https%3A//github.com/DSGDSR/pykedex)
 [![Follow on twitter](https://img.shields.io/twitter/follow/dsgdsrmc.svg?style=social&logo=twitter)](https://twitter.com/DSGDSRMC)
 
 
